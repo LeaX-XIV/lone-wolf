@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+// import { PlusButton, MinusButton, LeftArrow, RightArrow, SimpleTable, Table } from './components/SimpleComponents'
+import DestinyTable from './components/DestinyTable';
+// import KaiDisciplines from './components/KaiDisciplines';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="row vheight-100">
+			{/* <SimpleTable className="table-bordered"
+				data={[[
+					<MinusButton onClick={() => console.log('Hello ')}></MinusButton>,
+					<PlusButton onClick={() => console.log('world!')}></PlusButton>
+				], [
+					<LeftArrow></LeftArrow>,
+					<RightArrow></RightArrow>
+				], [
+					<div></div>,
+					<KaiDisciplines disciplines={[
+						{ _id: 0, name: "Mimetismo", description: "Questa Disciplina permette a un Cavaliere Kai d iadattarsi all'ambiente circostante. All'aperto, in campagna, può nascondersi tra alberi e rocce e passarevisino al nemico senza essere scoperto. In città e nei centri abitati lo rende, invece, capace di comportarsi e di parlare come un nativo del posto. Può anche aiutarlo a trovare un rifugio o un nascondiglio sicuro." },
+						{ _id: 1, name: "Caccia", description: "Questa Disciplina permette a un Cavaliere Kai di non morire di fame quando si trova in un ambiente selvaggio. Sarà sempre in grado di cacciare per procurarsi del cibo, tranne che in territori desolai e nel deserto. È inoltre una tecnica che gli consente di muoversi agilmente senza fare rumore durante l'inseguimento della sua preda." },
+						{ _id: 2, name: "Sesto Senso", description: "Questa Disciplina avverte chi la possiede di un pericolo imminente. Permette anche di capire la vera natura di uno sconosciuto o di uno strano oggetto incontrato nel corso dell'avventura." },
+						{ _id: 3, name: "Orientamento", description: "Questa Disciplina permette a un Cavaliere Kai di scegliere il percorso giusto anche in un territorio selvaggio, di scoprire l'ubicazione di una persona o di un oggetto in zone abitate e di leggere i segreti delle tracce e delle impronte." },
+						{ _id: 4, name: "Guarigione", description: "Questa disciplina serve a recuperare i punti di RESISTENZA persi in combattimento. Se possiedi quest'abilità, puoi recuperare 1 punto di RESISTENZA ogni volta che superi un paragrafo numerato senza essere impegnato in un combattimento." },
+						{ _id: 5, name: "Scherma", description: "Quando entra nel Monastero Kai, ogni allievo impara ad usare perfettamente un tipo di arma. Questa è l'arma in cui sei maestro. Se ti capiterà di affrontare un combattimento con tale arma, aggiungi 2 punti alla tua COMBATTIVITÀ." },
+						{ _id: 6, name: "Psicoschermo", description: "I Signori delle Tenebre e molti degli esseri malvagi loro servitori possono attaccarti con il loro Psicolaser. La Disciplina Kai dello Psicoschermo ti consente di non perdere punti di RESISTENZA se sei sottoposto a questa forma di attacco." },
+						{ _id: 7, name: "Psicolaser", description: "Questa tecnica permette a un Cavaliere Kai di attaccare i nemici con la forza della mente. Può essere usata inseime alle armi normali e aggiunge 2 punti alla tua COMBATTIVITÀ. Non tutte le creature possono essere ferite con lo Psicolaser." },
+						{ _id: 8, name: "Affinità Animale", description: "Questa Disciplina permette a un Cavaliere Kai di comunicare con alcuni animali e di capire le intenzioni di altri. In certi casi può consentire di controllare i loro istinti e il loro comportamento." },
+						{ _id: 9, name: "Telecinesi", description: "La padronanza di questa recnica consente a un Cavaliere Kai di muovere piccoli oggetti semplicemente concentrandosi." },
+					]} />
+				], [
+					<Table headers={['a', 'b', 'c']} data={[[1, 7, 7], [0, 1, 3]]} remove={console.log}></Table>,
+					<DestinyTable />
+				]]} /> */}
+			<DestinyTable />
+		</div>
+	);
 }
 
 export default App;
