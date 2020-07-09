@@ -128,4 +128,29 @@ function Table(props) {
 	);
 }
 
-export { MinusButton, PlusButton, LeftArrow, RightArrow, SimpleTable, Table };
+const ItemWithTooltip = (props) => {
+	const { text, tooltip, show, onMouseEnter, onMouseLeave, onFocus, onBlur } = props;
+
+	return (
+		<div className="d-flex flex-column"
+			style={{ position: 'relative' }}
+		>
+			<button type="button" className="btn btn-lg btn-primary m-2 p-3"
+				onMouseEnter={onMouseEnter}
+				onMouseLeave={onMouseLeave}
+				onFocus={onFocus}
+				onBlur={onBlur}
+			>
+				{text}
+			</button>
+			<div className={`popover ml-2 fade ${show ? 'show' : ''}`} role="tooltip" id={`${text}popover`}
+				style={{ position: 'absolute', top: '100%', left: '-25%', width: '150%' }}
+			>
+				<h3 className="popover-header text-dark">{text}</h3>
+				<div className="popover-body">{tooltip}</div>
+			</div>
+		</div>
+	);
+}
+
+export { MinusButton, PlusButton, LeftArrow, RightArrow, SimpleTable, Table, ItemWithTooltip };

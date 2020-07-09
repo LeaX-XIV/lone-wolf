@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ItemWithTooltip } from './SimpleComponents';
 
 const KaiDisciplines = (props) => {
 
@@ -31,7 +32,6 @@ const ItemWithHoverFocusTooltip = (props) => {
 		<ItemWithTooltip
 			text={text}
 			tooltip={tooltip}
-			// show={(focused !== undefined && focused === index) || (hovering && focused === undefined)}
 			show={(focused !== undefined && focused === index) || (!exclusive && hovering) || (focused === undefined && hovering)}
 			onFocus={e => setFocused(index)}
 			onBlur={e => setFocused(undefined)}
@@ -41,6 +41,7 @@ const ItemWithHoverFocusTooltip = (props) => {
 	);
 }
 
+// eslint-disable-next-line no-unused-vars
 const ItemWithHoverTooltip = (props) => {
 	const { text, tooltip } = props;
 
@@ -58,6 +59,7 @@ const ItemWithHoverTooltip = (props) => {
 	);
 }
 
+// eslint-disable-next-line no-unused-vars
 const ItemWithFocusTooltip = (props) => {
 	const { text, tooltip, index, focused, setFocused } = props;
 
@@ -69,31 +71,6 @@ const ItemWithFocusTooltip = (props) => {
 			onFocus={e => setFocused(index)}
 			onBlur={e => setFocused(undefined)}
 		/>
-	);
-}
-
-const ItemWithTooltip = (props) => {
-	const { text, tooltip, show, onMouseEnter, onMouseLeave, onFocus, onBlur } = props;
-
-	return (
-		<div className="d-flex flex-column"
-			style={{ position: 'relative' }}
-		>
-			<button type="button" className="btn btn-lg btn-primary m-2 p-3"
-				onMouseEnter={onMouseEnter}
-				onMouseLeave={onMouseLeave}
-				onFocus={onFocus}
-				onBlur={onBlur}
-			>
-				{text}
-			</button>
-			<div className={`popover ml-2 fade ${show ? 'show' : ''}`} role="tooltip" id={`${text}popover`}
-				style={{ position: 'absolute', top: '100%', left: '-25%', width: '150%' }}
-			>
-				<h3 className="popover-header text-dark">{text}</h3>
-				<div className="popover-body">{tooltip}</div>
-			</div>
-		</div>
 	);
 }
 
