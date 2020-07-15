@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/lone-wolf/static/css/main.6a934dfc.chunk.css",
-    "main.js": "/lone-wolf/static/js/main.e21d345a.chunk.js",
-    "main.js.map": "/lone-wolf/static/js/main.e21d345a.chunk.js.map",
+    "main.js": "/lone-wolf/static/js/main.bc806d31.chunk.js",
+    "main.js.map": "/lone-wolf/static/js/main.bc806d31.chunk.js.map",
     "runtime-main.js": "/lone-wolf/static/js/runtime-main.a4927c5d.js",
     "runtime-main.js.map": "/lone-wolf/static/js/runtime-main.a4927c5d.js.map",
     "static/js/2.5503bb28.chunk.js": "/lone-wolf/static/js/2.5503bb28.chunk.js",
     "static/js/2.5503bb28.chunk.js.map": "/lone-wolf/static/js/2.5503bb28.chunk.js.map",
     "index.html": "/lone-wolf/index.html",
-    "precache-manifest.78de6e4d87a37a70841e37d6a7ace6c3.js": "/lone-wolf/precache-manifest.78de6e4d87a37a70841e37d6a7ace6c3.js",
+    "precache-manifest.e15183aabfa172b03c3fdf0348403472.js": "/lone-wolf/precache-manifest.e15183aabfa172b03c3fdf0348403472.js",
     "service-worker.js": "/lone-wolf/service-worker.js",
     "static/css/main.6a934dfc.chunk.css.map": "/lone-wolf/static/css/main.6a934dfc.chunk.css.map",
     "static/js/2.5503bb28.chunk.js.LICENSE.txt": "/lone-wolf/static/js/2.5503bb28.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.a4927c5d.js",
     "static/js/2.5503bb28.chunk.js",
     "static/css/main.6a934dfc.chunk.css",
-    "static/js/main.e21d345a.chunk.js"
+    "static/js/main.bc806d31.chunk.js"
   ]
 }
