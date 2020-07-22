@@ -31,10 +31,7 @@ const DestinyTable = (props) => {
 
 	return (
 		<>
-			<div className="col-3" />
-			<div className="col-6 d-flex justify-content-center mt-3"
-				style={{ position: 'relative' }}
-			>
+			<div className="col-12 d-flex justify-content-center mt-3">
 				<SimpleTable className="table-bordered noselect" id="destinyTable"
 					data={table}
 					hideData={true}
@@ -48,7 +45,7 @@ const DestinyTable = (props) => {
 							: undefined
 					}
 				/>
-				{mode === "show" && <div className="text-light" id="overlay">{selected}</div>}
+				{mode === "show" && <div className="text-light noselect" id="overlay">{selected}</div>}
 			</div>
 		</>
 	);
