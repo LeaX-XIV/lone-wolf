@@ -27,25 +27,37 @@ const Armaments = (props) => {
 				const item = getItemFromId(id);
 
 				return (
-					<div
-						className="d-flex flex-row"
-					>
-						<ItemWithHoverTooltip key={id} className='col-10' text={item.name} tooltip={item.description} />
-						<MinusButton className='col-2' onClick={() => { }} />
+					<div className="d-flex flex-row">
+						<div className="col-9 p-1">
+							<ItemWithHoverTooltip key={id} text={item.name} tooltip={item.description} />
+						</div>
+						<div className="col-3 p-1">
+							<MinusButton onClick={() => { }} />
+						</div>
 					</div>
 				);
 			}
-			).concat(<PlusButton className="col-12" onClick={() => { }} />)
+			).concat(
+				<div className="d-flex flex-row">
+					<div className="col-12 p-1">
+						<PlusButton className="col-12" onClick={() => { }} />
+					</div>
+				</div>)
 		)
 	);
 
 	return (
 		<>
-			<SmallTitle>Armaments</SmallTitle>
-			<SimpleTable
-				id={'specialItems'}
-				data={equip}
-			/>
+			<div className="d-flex flex-wrap">
+				<div className="col-12">
+					<SmallTitle>Armaments</SmallTitle>
+					<SimpleTable
+						className="col-12"
+						id={'specialItems'}
+						data={equip}
+					/>
+				</div>
+			</div>
 		</>
 	);
 }

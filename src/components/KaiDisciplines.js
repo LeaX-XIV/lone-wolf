@@ -12,7 +12,7 @@ const KaiDisciplines = (props) => {
 	return (
 		<>
 			<SmallTitle>Kai Disciplines</SmallTitle>
-			<div className="d-flex flex-wrap ">
+			<div className="d-flex flex-row justify-content-around">
 				{disciplines.map((id, i) => {
 
 					const discipline = getDisciplineFromId(id);

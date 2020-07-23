@@ -108,66 +108,71 @@ const items = [
 	},
 	{
 		"_id": 20,
+		"name": "Cibo",
+		"type": "Food"
+	},
+	{
+		"_id": 21,
 		"name": "Ascia +1",
 		"description": "Aggiungi 1 punto a combattività",
 		"type": "Armament"
 	},
 	{
-		"_id": 21,
+		"_id": 22,
 		"name": "Spadone +1",
 		"description": "Aggiungi 1 punto a combattività",
 		"type": "Armament"
 	},
 	{
-		"_id": 22,
+		"_id": 23,
 		"name": "Martello da Guerra +1",
 		"description": "Aggiungi 1 punto a combattività",
 		"type": "Armament"
 	},
 	{
-		"_id": 23,
+		"_id": 24,
 		"name": "Lancia +1",
 		"description": "Aggiungi 1 punto a combattività",
 		"type": "Armament"
 	},
 	{
-		"_id": 24,
+		"_id": 25,
 		"name": "Alether",
 		"description": "+2 Combat fon 1 fight",
 		"type": "Object"
 	},
 	{
-		"_id": 25,
+		"_id": 26,
 		"name": "Coscia d'Agnello",
 		"type": "Food"
 	},
 	{
-		"_id": 26,
+		"_id": 27,
 		"name": "Spazzola d'Argento",
 		"type": "Object"
 	},
 	{
-		"_id": 27,
+		"_id": 28,
 		"name": "Barattolo di Pittura Nera",
 		"type": "Object"
 	},
 	{
-		"_id": 28,
+		"_id": 29,
 		"name": "Chiave di Ferro",
 		"type": "Special"
 	},
 	{
-		"_id": 29,
+		"_id": 30,
 		"name": "Ruota Dentata di Ferro",
 		"type": "Object"
 	},
 	{
-		"_id": 30,
+		"_id": 31,
 		"name": "Pietra Focaia",
 		"type": "Object"
 	},
 	{
-		"_id": 31,
+		"_id": 32,
 		"name": "Chiodo di Ferro",
 		"type": "Object"
 	}

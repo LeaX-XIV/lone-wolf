@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const SmallTitle = (props) => {
-	return <h4 className="p-3 mt-5">{props.children}</h4>
+	return <h4 className="p-2 mt-1">{props.children}</h4>
 }
 
 function MinusButton(props) {
@@ -137,10 +137,9 @@ const ItemWithTooltip = (props) => {
 
 	return (
 		<div
-			className="d-flex flex-column"
 			style={{ position: 'relative' }}
 		>
-			<button type="button" className="btn btn-lg btn-primary m-2 p-3"
+			<button type="button" className="btn btn-lg btn-primary m-2 p-3 col-12"
 				onMouseEnter={onMouseEnter}
 				onMouseLeave={onMouseLeave}
 				onFocus={onFocus}

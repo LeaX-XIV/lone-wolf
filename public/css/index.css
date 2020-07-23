@@ -19,8 +19,8 @@ code {
 #destinyTable {
     background-color: black;
     color: black;
-    width: 90vmin;
-    height: 90vmin;
+    width: 60vmin;
+    height: 60vmin;
 }
 
 .destinyTableCell {
@@ -38,7 +38,7 @@ code {
     z-index: 999;
     /* cursor: not-allowed; */
     /* font-size: 24.2em; */
-    font-size: 50vmin;
+    font-size: 40vmin;
     position: absolute;
 }
 

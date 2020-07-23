@@ -31,7 +31,7 @@ const DestinyTable = (props) => {
 
 	return (
 		<>
-			<div className="col-12 d-flex justify-content-center mt-3">
+			<div className="d-flex justify-content-center">
 				<SimpleTable className="table-bordered noselect" id="destinyTable"
 					data={table}
 					hideData={true}
