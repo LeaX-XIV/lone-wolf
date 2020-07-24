@@ -138,7 +138,7 @@ const items = [
 	{
 		"_id": 25,
 		"name": "Alether",
-		"description": "+2 Combat fon 1 fight",
+		"description": "+2 Combat for 1 fight",
 		"type": "Object"
 	},
 	{
