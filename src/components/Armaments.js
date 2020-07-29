@@ -5,6 +5,7 @@ import { SmallTitle, MinusButton, PlusButton, SimpleTable, ItemWithHoverTooltip 
 
 const Armaments = (props) => {
 	const { armaments } = props;
+	const { addArmament, removeArmament } = props.callbacks;
 
 	const { getItemFromId } = useContext(ItemsContext);
 
@@ -22,7 +23,7 @@ const Armaments = (props) => {
 
 	const equip = to2ColumnsArray(
 		limitToN(2,
-			armaments.map(id => {
+			armaments.map((id, i) => {
 
 				const item = getItemFromId(id);
 
@@ -32,7 +33,7 @@ const Armaments = (props) => {
 							<ItemWithHoverTooltip key={id} text={item.name} tooltip={item.description} />
 						</div>
 						<div className="col-3 p-1">
-							<MinusButton onClick={() => { }} />
+							<MinusButton onClick={() => { removeArmament(i) }} />
 						</div>
 					</div>
 				);
@@ -40,7 +41,7 @@ const Armaments = (props) => {
 			).concat(
 				<div className="d-flex flex-row">
 					<div className="col-12 p-1">
-						<PlusButton className="col-12" onClick={() => { }} />
+						<PlusButton className="col-12" onClick={() => { addArmament() }} />
 					</div>
 				</div>)
 		)

@@ -208,4 +208,16 @@ const ItemWithHoverFocusTooltip = (props) => {
 	);
 }
 
-export { SmallTitle, MinusButton, PlusButton, LeftArrow, RightArrow, SimpleTable, Table, ItemWithTooltip, ItemWithHoverFocusTooltip, ItemWithHoverTooltip, ItemWithFocusTooltip };
+const MinusPlusCounter = (props) => {
+	const { value, onPlus, onMinus } = props;
+
+	return (
+		<>
+			<MinusButton onClick={onMinus} />
+			<span>{value}</span>
+			<PlusButton onClick={onPlus} />
+		</>
+	);
+}
+
+export { SmallTitle, MinusButton, PlusButton, LeftArrow, RightArrow, SimpleTable, Table, ItemWithTooltip, ItemWithHoverFocusTooltip, ItemWithHoverTooltip, ItemWithFocusTooltip, MinusPlusCounter };

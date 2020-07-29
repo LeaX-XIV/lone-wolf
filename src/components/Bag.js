@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { ItemsContext } from '../contexts/ItemsContext';
 
-import { SmallTitle, MinusButton, PlusButton, SimpleTable, ItemWithHoverTooltip } from './SimpleComponents';
+import { SmallTitle, MinusButton, PlusButton, SimpleTable, ItemWithHoverTooltip, MinusPlusCounter } from './SimpleComponents';
 
 const Bag = (props) => {
 
 	const { bag } = props;
+	const { addBagItem, removeBagItem, addSpecialItem, removeSpecialItem, addGoldCrowns, removeGoldCrowns } = props.callbacks;
 
 	const { getItemFromId } = useContext(ItemsContext);
 
@@ -23,7 +24,7 @@ const Bag = (props) => {
 	const bagItems =
 		to2ColumnsArray(
 			limitToN(8,
-				bag.items.map(id => {
+				bag.items.map((id, i) => {
 
 					const item = getItemFromId(id);
 
@@ -33,7 +34,7 @@ const Bag = (props) => {
 								<ItemWithHoverTooltip key={id} text={item.name} tooltip={item.description} />
 							</div>
 							<div className="col-3 p-1">
-								<MinusButton className="col-3" onClick={() => { }} />
+								<MinusButton className="col-3" onClick={() => { removeBagItem(i) }} />
 							</div>
 						</div >
 					);
@@ -41,7 +42,7 @@ const Bag = (props) => {
 				).concat(
 					<div className="d-flex flex-row">
 						<div className="col-12 p-1">
-							<PlusButton className="col-12" onClick={() => { }} />
+							<PlusButton className="col-12" onClick={() => { addBagItem() }} />
 						</div>
 					</div>)
 			)
@@ -49,7 +50,7 @@ const Bag = (props) => {
 
 	const specialItems =
 		to2ColumnsArray(
-			bag.specialItems.map(id => {
+			bag.specialItems.map((id, i) => {
 
 				const item = getItemFromId(id);
 
@@ -59,7 +60,7 @@ const Bag = (props) => {
 							<ItemWithHoverTooltip key={id} text={item.name} tooltip={item.description} />
 						</div>
 						<div className="col-3 p-1">
-							<MinusButton className="col-3" onClick={() => { }} />
+							<MinusButton className="col-3" onClick={() => { removeSpecialItem(i) }} />
 						</div>
 					</div>
 				);
@@ -67,7 +68,7 @@ const Bag = (props) => {
 			).concat(
 				<div className="d-flex flex-row">
 					<div className="col-12 p-1">
-						<PlusButton className="col-12" onClick={() => { }} />
+						<PlusButton className="col-12" onClick={() => { addSpecialItem() }} />
 					</div>
 				</div>)
 		);
@@ -92,9 +93,9 @@ const Bag = (props) => {
 
 			<div className="col-2">
 				<SmallTitle>Gold Crowns</SmallTitle>
-				<MinusButton onClick={() => { }} />
-				<span className='h3'>{bag.goldCrowns}</span>
-				<PlusButton onClick={() => { }} />
+				<div className="h3">
+					<MinusPlusCounter value={bag.goldCrowns} onPlus={addGoldCrowns} onMinus={removeGoldCrowns} />
+				</div>
 			</div>
 		</div>
 	);
