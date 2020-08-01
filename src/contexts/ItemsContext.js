@@ -38,141 +38,136 @@ const items = [
 	},
 	{
 		"_id": 7,
-		"name": "Spada",
-		"type": "Armament"
-	},
-	{
-		"_id": 8,
 		"name": "Asta",
 		"type": "Armament"
 	},
 	{
-		"_id": 9,
+		"_id": 8,
 		"name": "Spadone",
 		"type": "Armament"
 	},
 	{
-		"_id": 10,
+		"_id": 9,
 		"name": "Spadone di Perla di Ferro",
 		"type": "Armament"
 	},
 	{
-		"_id": 11,
+		"_id": 10,
 		"name": "Fune",
 		"type": "Object"
 	},
 	{
-		"_id": 12,
+		"_id": 11,
 		"name": "Pugnale +1",
 		"description": "Aggiungi 1 punto a combattività",
 		"type": "Armament"
 	},
 	{
-		"_id": 13,
+		"_id": 12,
 		"name": "Mazza +1",
 		"description": "Aggiungi 1 punto a combattività",
 		"type": "Armament"
 	},
 	{
-		"_id": 14,
+		"_id": 13,
 		"name": "Spada +1",
 		"description": "Aggiungi 1 punto a combattività",
 		"type": "Armament"
 	},
 	{
-		"_id": 15,
+		"_id": 14,
 		"name": "Asta +1",
 		"description": "Aggiungi 1 punto a combattività",
 		"type": "Armament"
 	},
 	{
-		"_id": 16,
+		"_id": 15,
 		"name": "Vigorilla",
 		"description": "+4 Resist after a fight",
 		"type": "Object"
 	},
 	{
-		"_id": 17,
+		"_id": 16,
 		"name": "Cristallo da Battaglia Kai",
 		"type": "Object"
 	},
 	{
-		"_id": 18,
+		"_id": 17,
 		"name": "Cristallo del Sonno Kai",
-		"type": "Armament"
+		"type": "Object"
 	},
 	{
-		"_id": 19,
+		"_id": 18,
 		"name": "Chiave Kai d'Oro",
 		"type": "Special"
 	},
 	{
-		"_id": 20,
+		"_id": 19,
 		"name": "Cibo",
 		"type": "Food"
 	},
 	{
-		"_id": 21,
+		"_id": 20,
 		"name": "Ascia +1",
 		"description": "Aggiungi 1 punto a combattività",
 		"type": "Armament"
 	},
 	{
-		"_id": 22,
+		"_id": 21,
 		"name": "Spadone +1",
 		"description": "Aggiungi 1 punto a combattività",
 		"type": "Armament"
 	},
 	{
-		"_id": 23,
+		"_id": 22,
 		"name": "Martello da Guerra +1",
 		"description": "Aggiungi 1 punto a combattività",
 		"type": "Armament"
 	},
 	{
-		"_id": 24,
+		"_id": 23,
 		"name": "Lancia +1",
 		"description": "Aggiungi 1 punto a combattività",
 		"type": "Armament"
 	},
 	{
-		"_id": 25,
+		"_id": 24,
 		"name": "Alether",
 		"description": "+2 Combat for 1 fight",
 		"type": "Object"
 	},
 	{
-		"_id": 26,
+		"_id": 25,
 		"name": "Coscia d'Agnello",
 		"type": "Food"
 	},
 	{
-		"_id": 27,
+		"_id": 26,
 		"name": "Spazzola d'Argento",
 		"type": "Object"
 	},
 	{
-		"_id": 28,
+		"_id": 27,
 		"name": "Barattolo di Pittura Nera",
 		"type": "Object"
 	},
 	{
-		"_id": 29,
+		"_id": 28,
 		"name": "Chiave di Ferro",
 		"type": "Special"
 	},
 	{
-		"_id": 30,
+		"_id": 29,
 		"name": "Ruota Dentata di Ferro",
 		"type": "Object"
 	},
 	{
-		"_id": 31,
+		"_id": 30,
 		"name": "Pietra Focaia",
 		"type": "Object"
 	},
 	{
-		"_id": 32,
+		"_id": 31,
 		"name": "Chiodo di Ferro",
 		"type": "Object"
 	}
