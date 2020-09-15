@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Lonewolf, { LonewolfChapter, LonewolfStatus } from './entities/lonewolf';
+import Enemy from './entities/enemy';
 // import { PlusButton, MinusButton, LeftArrow, RightArrow, SimpleTable, Table } from './components/SimpleComponents'
 import Status from './components/Status';
 import CombatRecord from './components/CombatRecord';
@@ -15,51 +16,69 @@ import { saveAs } from 'file-saver';
 function App() {
 	const [update, setUpdate] = useState(0);
 
-	const [l, setL] = useState(new Lonewolf(18, 24, [new LonewolfChapter(1, new LonewolfStatus([0, 1, 2, 3, 4], [14, 10], true, [11, 18, 20, 25], [19], 20, 21))]));
+	const [l, setL] = useState();
+	// const [l, setL] = useState(new Lonewolf(18, 24, [new LonewolfChapter(1, new LonewolfStatus([0, 1, 2, 3, 4], [14, 10], true, [11, 18, 20, 25], [19], 20, 21))]));
 	const [status, setStatus] = useState(undefined);
 	const [kaiDisciplines, setKaiDisciplines] = useState(undefined);
 	const [armaments, setArmaments] = useState(undefined);
 	const [bag, setBag] = useState(undefined);
 	const [chapters, setChapters] = useState(undefined);
 
+	const [enemy] = useState(new Enemy(13, 14, 14));
+	const [inCombat, setInCombat] = useState(false);
+
 	useEffect(() => {
-		setStatus(l.getStatus());
-		setKaiDisciplines(l.getKaiDisciplines());
-		setArmaments(l.getArmaments());
-		setBag(l.getBag());
-		setChapters(l.getListOfChapters().reverse());
-		console.log(l)
+		if(l) {
+			setStatus(l.getStatus());
+			setKaiDisciplines(l.getKaiDisciplines());
+			setArmaments(l.getArmaments());
+			setBag(l.getBag());
+			setChapters(l.getListOfChapters().reverse());
+			console.log(l)
+		}
 	}, [l, update]);
+
+	useEffect(() => {
+		if(l && !inCombat) {
+			// console.log('exit combat');
+			l.resetCurrentCombat();
+		}
+	}, [l, inCombat]);
 
 	function doUpdate() {
 		setUpdate(u => u + 1);
 	}
 
 	useEffect(() => {
-		setL(new Lonewolf(18, 24, [new LonewolfChapter(1, new LonewolfStatus([0, 1, 2, 3, 4], [14, 10], true, [11, 18, 20, 25], [19], 20, 21))]));
+		setL(new Lonewolf(18, 24, [new LonewolfChapter(1, new LonewolfStatus([0, 1, 2, 3, 4], [13, 9], true, [10, 17, 19, 24], [18], 20, 21))]));
 		doUpdate();
 	}, []);
 
 
 	if(l && status && kaiDisciplines && armaments && bag && chapters) {
+		let combat = {
+			lonewolf: l.getCombatStatus(),
+			enemy: enemy,
+			inCombat: inCombat
+		};
 		return (
 			<div className="row vheight-100 d-flex">
 				<div className="col-4 d-flex flex-column">
 					<Status status={status} />
 					<CombatRecord
-						combat={{
-							lonewolf: status,
-							enemy: {
-								combat: 15,
-								baseResist: 19,
-								resist: 19
-							}
-						}}
+						combat={combat}
 						callbacks={{
+							setEnemyCombat: (c) => { enemy.setCombat(c); doUpdate(); },
+							setEnemyBaseResist: (br) => { enemy.setBaseResist(br); doUpdate(); },
+							setLoneWolfCombat: (c) => { l.setCurrentCombat(c); doUpdate(); },
+							nextChapter: (c) => { console.log(c); l.nextChapter(c); doUpdate(); },
+
 							lonewolfMinus: () => { l.setCurrentResist(status.resist - 1); doUpdate(); },
 							lonewolfPlus: () => { l.setCurrentResist(status.resist + 1); doUpdate(); },
-							enemyMinus: () => { },
-							enemyPlus: () => { },
+							enemyMinus: () => { enemy.setResist(enemy.getResist() - 1); doUpdate(); },
+							enemyPlus: () => { enemy.setResist(enemy.getResist() + 1); doUpdate(); },
+
+							InCombat: () => { setInCombat(ic => !ic); doUpdate(); },
 						}}
 					/>
 					<DestinyTable />
@@ -73,16 +92,16 @@ function App() {
 					<Armaments
 						armaments={armaments}
 						callbacks={{
-							addArmament: () => { l.addCurrentArmament(10); doUpdate(); },
+							addArmament: (i) => { l.addCurrentArmament(i); doUpdate(); },
 							removeArmament: (i) => { l.removeCurrentArmamentAtIndex(i); doUpdate(); }
 						}}
 					/>
 					<Bag
 						bag={bag}
 						callbacks={{
-							addBagItem: () => { l.addCurrentBagItem(17); doUpdate(); },
+							addBagItem: (i) => { l.addCurrentBagItem(i); doUpdate(); },
 							removeBagItem: (i) => { l.removeCurrentBagItemAtIndex(i); doUpdate(); },
-							addSpecialItem: () => { l.addCurrentSpecialItem(19); doUpdate() },
+							addSpecialItem: (i) => { l.addCurrentSpecialItem(i); doUpdate() },
 							removeSpecialItem: (i) => { l.removeCurrentSpecialItemsItemAtIndex(i); doUpdate(); },
 							addGoldCrowns: () => { l.setCurrentGoldCrowns(bag.goldCrowns + 1); doUpdate(); },
 							removeGoldCrowns: () => { l.setCurrentGoldCrowns(bag.goldCrowns - 1); doUpdate(); },

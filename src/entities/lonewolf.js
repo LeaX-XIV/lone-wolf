@@ -1,6 +1,7 @@
 class Lonewolf {
 	constructor(combat, maxResist, path) {
 		this.combat = combat;
+		this.currentCombat = this.combat;
 		this.maxResist = maxResist;
 		this.path = [...path];
 		if(this.path.length > 0) {
@@ -32,7 +33,7 @@ class Lonewolf {
 		if(typeof lw === "object" && lw.__proto__.constructor.name === Lonewolf.name)
 			return lw;
 		else
-			throw new SyntaxError("File formatted incorectly.");
+			throw new SyntaxError("Incorrect file format.");
 	}
 
 	toJSON() {
@@ -54,6 +55,10 @@ class Lonewolf {
 
 	getStatus() {
 		return new LonewolfCombatStatus(this.combat, this.maxResist, this.currentStatus.currentResist);
+	}
+
+	getCombatStatus() {
+		return new LonewolfCombatStatus(this.currentCombat, this.maxResist, this.currentStatus.currentResist);
 	}
 
 	getKaiDisciplinesOfChapter(index) {
@@ -110,7 +115,14 @@ class Lonewolf {
 
 
 
+	setCurrentCombat(newCurrentCombat) {
+		if(!isNaN(newCurrentCombat))
+			this.currentCombat = newCurrentCombat;
+	}
 
+	resetCurrentCombat() {
+		this.setCurrentCombat(this.combat);
+	}
 
 	setCurrentResist(newResist) {
 		if(newResist >= 0 && newResist <= this.maxResist)

@@ -85,14 +85,18 @@ const Armaments = (props) => {
 					/>
 					{inputValue.length > 0 ?
 						<div className="bg-white" style={{ position: 'absolute', zIndex: '99', top: "80%", left: "10%" }}>
-							{getArmaments().filter(a => a.name.toLocaleLowerCase().includes(inputValue.toLocaleLowerCase())).map(a =>
-								<div
-									key={a.name}
-									className="p-2 mt-3 mx-3"
-									onClick={() => { setInputValue(a.name); }}
-								>
-									{a.name}
-								</div>)}
+							{getArmaments()
+								.filter(a => a.name.toLocaleLowerCase() !== inputValue.toLocaleLowerCase() &&
+									a.name.toLocaleLowerCase().startsWith(inputValue.toLocaleLowerCase()))
+								.map(a =>
+									<div
+										key={a.name}
+										className="p-2 mt-3 mx-3"
+										onClick={() => { setInputValue(a.name); }}
+									>
+										{a.name}
+									</div>)
+							}
 						</div>
 						: <></>
 					}
@@ -104,6 +108,11 @@ const Armaments = (props) => {
 								addArmament(selected._id);
 								setInputValue("");
 								setMode(modes.SHOW);
+							} else {
+								// Item does not exist in global context.
+								// Add to context
+								// Add context extension to save file
+								// Add to armaments
 							}
 						}} />
 				</div>
