@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d0035fea61fc2803d0642c6f9aa8a271",
+    "revision": "275b82a3868ab2f4b9bfefb818821339",
     "url": "/lone-wolf/index.html"
   },
   {
-    "revision": "b3e8a703ae5d8577bb49",
+    "revision": "b55fd3165f67f87285c4",
     "url": "/lone-wolf/static/css/main.050523cc.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lone-wolf/static/js/2.3cdbbd8c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b3e8a703ae5d8577bb49",
-    "url": "/lone-wolf/static/js/main.0e83cbc1.chunk.js"
+    "revision": "b55fd3165f67f87285c4",
+    "url": "/lone-wolf/static/js/main.1b4947b0.chunk.js"
   },
   {
     "revision": "0043065b6ef2c46dd2c9",
