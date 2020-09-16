@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/lone-wolf/precache-manifest.92455b13ac1cabd58022908e3987bba8.js"
+  "/lone-wolf/precache-manifest.c25ac1ac0576c35cc52446ba31b000b8.js"
 );
 
 self.addEventListener('message', (event) => {
