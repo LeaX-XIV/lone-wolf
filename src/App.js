@@ -12,6 +12,7 @@ import Armaments from './components/Armaments';
 import Chapters from './components/Chapters';
 
 import { saveAs } from 'file-saver';
+import { SmallTitle } from './components/SimpleComponents';
 
 function App() {
 	const [update, setUpdate] = useState(0);
@@ -49,10 +50,10 @@ function App() {
 		setUpdate(u => u + 1);
 	}
 
-	useEffect(() => {
-		setL(new Lonewolf(18, 24, [new LonewolfChapter(1, new LonewolfStatus([0, 1, 2, 3, 4], [13, 9], true, [10, 17, 19, 24], [18], 20, 21))]));
-		doUpdate();
-	}, []);
+	// useEffect(() => {
+	// 	setL(new Lonewolf(18, 24, [new LonewolfChapter(1, new LonewolfStatus([0, 1, 2, 3, 4], [13, 9], true, [10, 17, 19, 24], [18], 20, 21))]));
+	// 	doUpdate();
+	// }, []);
 
 
 	if(l && status && kaiDisciplines && armaments && bag && chapters) {
@@ -129,15 +130,19 @@ function App() {
 
 		return (
 			<>
-				<input type="file" onChange={async e => {
-					e.preventDefault();
-					const reader = new FileReader();
-					reader.onload = async e => {
-						loadLoneWolfFromFile(e.target.result);
-						// console.log(text);
-					}
-					reader.readAsText(e.target.files[0]);
-				}} />
+				<SmallTitle>Lone Wolf</SmallTitle>
+				<div className="custom-file">
+					<input type="file" className="custom-file-input" id="loneWolfFile" onChange={async e => {
+						e.preventDefault();
+						const reader = new FileReader();
+						reader.onload = async e => {
+							loadLoneWolfFromFile(e.target.result);
+							// console.log(text);
+						}
+						reader.readAsText(e.target.files[0]);
+					}} />
+					<label class="custom-file-label" for="loneWolfFile">Choose file...</label>
+				</div>
 			</>
 		);
 	}

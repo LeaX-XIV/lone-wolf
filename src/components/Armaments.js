@@ -36,19 +36,19 @@ const Armaments = (props) => {
 				const item = getItemFromId(id);
 
 				return (
-					<div className="d-flex flex-row">
-						<div className="col-9 p-1">
-							<ItemWithHoverTooltip key={id} text={item.name} tooltip={item.description} />
+					<div key={id} className="d-flex flex-row p-1">
+						<div className="col-10">
+							<ItemWithHoverTooltip text={item.name} tooltip={item.description} />
 						</div>
-						<div className="col-3 p-1">
+						<div>
 							<MinusButton onClick={() => { removeArmament(i) }} />
 						</div>
 					</div>
 				);
 			}
 			).concat(
-				<div className="d-flex flex-row">
-					<div className="col-12 p-1">
+				<div className="d-flex flex-row p-1">
+					<div className="col-12">
 						<PlusButton className="col-12" onClick={() => { setMode(modes.SELECT) }} />
 					</div>
 				</div>)

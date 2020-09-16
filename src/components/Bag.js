@@ -39,19 +39,19 @@ const Bag = (props) => {
 					const item = getItemFromId(id);
 
 					return (
-						<div className="d-flex flex-row">
-							<div className="col-9 p-1">
+						<div className="d-flex flex-row p-1">
+							<div className="col-9">
 								<ItemWithHoverTooltip key={id} text={item.name} tooltip={item.description} />
 							</div>
-							<div className="col-3 p-1">
-								<MinusButton className="col-3" onClick={() => { removeBagItem(i) }} />
+							<div>
+								<MinusButton onClick={() => { removeBagItem(i) }} />
 							</div>
 						</div >
 					);
 				}
 				).concat(
-					<div className="d-flex flex-row">
-						<div className="col-12 p-1">
+					<div className="d-flex flex-row p-1">
+						<div className="col-12">
 							<PlusButton className="col-12" onClick={() => { setBagMode(modes.SELECT) }} />
 						</div>
 					</div>)
@@ -65,19 +65,19 @@ const Bag = (props) => {
 				const item = getItemFromId(id);
 
 				return (
-					<div className="d-flex flex-row">
-						<div className="col-9 p-1">
-							<ItemWithHoverTooltip key={id} text={item.name} tooltip={item.description} />
+					<div key={id} className="d-flex flex-row p-1">
+						<div className="col-9">
+							<ItemWithHoverTooltip text={item.name} tooltip={item.description} />
 						</div>
-						<div className="col-3 p-1">
-							<MinusButton className="col-3" onClick={() => { removeSpecialItem(i) }} />
+						<div>
+							<MinusButton onClick={() => { removeSpecialItem(i) }} />
 						</div>
 					</div>
 				);
 			}
 			).concat(
-				<div className="d-flex flex-row">
-					<div className="col-12 p-1">
+				<div className="d-flex flex-row p-1">
+					<div className="col-12">
 						<PlusButton className="col-12" onClick={() => { setSpecialItemsMode(modes.SELECT) }} />
 					</div>
 				</div>)
