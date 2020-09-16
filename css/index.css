@@ -19,8 +19,8 @@ code {
 #destinyTable {
     background-color: black;
     color: black;
-    width: 90vmin;
-    height: 90vmin;
+    width: 60vmin;
+    height: 60vmin;
 }
 
 .destinyTableCell {
@@ -38,12 +38,35 @@ code {
     z-index: 999;
     /* cursor: not-allowed; */
     /* font-size: 24.2em; */
-    font-size: 50vmin;
+    font-size: 40vmin;
     position: absolute;
 }
 
 .fade:not(.show) {
     display: none;
+}
+
+.combatRecordCell {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+svg.beating-heart-svg {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    left: 3em;
+
+    transform-origin: center center;
+    animation-name: heartbeat-animation;
+    animation-duration: 0.8s;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+svg.beating-heart-svg.fast {
+    animation-duration: 0.3s;
 }
 
 .noselect {
@@ -59,4 +82,26 @@ code {
     /* Internet Explorer/Edge */
     user-select: none;
     /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+@keyframes heartbeat-animation {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1, 1);
+    }
+
+    60% {
+        transform: scale(1.3, 1.3);
+    }
+
+    75% {
+        transform: scale(0.9, 0.9);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
 }
