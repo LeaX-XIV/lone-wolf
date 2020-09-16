@@ -141,7 +141,7 @@ function App() {
 						}
 						reader.readAsText(e.target.files[0]);
 					}} />
-					<label class="custom-file-label" for="loneWolfFile">Choose file...</label>
+					<label className="custom-file-label" for="loneWolfFile">Choose file...</label>
 				</div>
 			</>
 		);
