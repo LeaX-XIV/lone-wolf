@@ -143,6 +143,7 @@ function App() {
 					}} />
 					<label className="custom-file-label" htmlFor="loneWolfFile">Choose file...</label>
 				</div>
+				<div className="text-muted">If you don't have a save file yet, download one <a href="https://gist.githubusercontent.com/LeaX-XIV/bb1864501d1c7c70f267dfa8b3f3b0f6/raw/f38cd3b6b37980d7dc7c658bf6f30028c5eaf893/LoneWolf.json" download="LoneWolf.json" target="_blank" rel="noopener noreferrer">here</a>.</div>
 			</>
 		);
 	}
