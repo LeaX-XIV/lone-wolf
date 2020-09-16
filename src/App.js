@@ -79,7 +79,7 @@ function App() {
 							enemyMinus: () => { enemy.setResist(enemy.getResist() - 1); doUpdate(); },
 							enemyPlus: () => { enemy.setResist(enemy.getResist() + 1); doUpdate(); },
 
-							InCombat: () => { setInCombat(ic => !ic); doUpdate(); },
+							swapInCombat: () => { setInCombat(ic => !ic); doUpdate(); },
 						}}
 					/>
 					<DestinyTable />
