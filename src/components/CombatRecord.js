@@ -45,7 +45,10 @@ const CombatRecord = (props) => {
 								<input type="number" className="form-control" name="lw-combat" value={lonewolf.combat} onChange={e => { setLoneWolfCombat(e.target.value) }}></input>
 							]]}
 						/>
-						<button type="button" className="btn btn-lg btn-danger" onClick={swapInCombat}>Start Fight</button>
+						<button type="button" className="btn btn-lg btn-danger" onClick={() => {
+							if(enemy.combat && enemy.baseResist && lonewolf.combat)
+								swapInCombat();
+						}}>Start Fight</button>
 					</div>
 					<div className="col-3">
 						<SimpleTable

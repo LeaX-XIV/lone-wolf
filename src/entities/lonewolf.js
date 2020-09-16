@@ -118,7 +118,7 @@ class Lonewolf {
 
 
 	setCurrentCombat(newCurrentCombat) {
-		if(!isNaN(newCurrentCombat))
+		if(newCurrentCombat === '' || !isNaN(newCurrentCombat))
 			this.currentCombat = newCurrentCombat;
 	}
 

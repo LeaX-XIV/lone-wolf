@@ -22,12 +22,12 @@ class Enemy {
 	}
 
 	setCombat(combat) {
-		if(!isNaN(Number(combat)) && combat > 0)
+		if(combat === '' || (!isNaN(Number(combat)) && combat > 0))
 			this.combat = combat;
 	}
 
 	setBaseResist(baseResist) {
-		if(!isNaN(Number(baseResist)) && baseResist > 0) {
+		if(baseResist === '' || (!isNaN(Number(baseResist)) && baseResist > 0)) {
 			this.baseResist = baseResist;
 			this.resist = baseResist;
 		}
