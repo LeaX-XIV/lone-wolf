@@ -103,7 +103,7 @@ const Armaments = (props) => {
 					<PlusButton
 						className="col-1"
 						onClick={() => {
-							const selected = getArmaments().filter(a => a.name === inputValue)[0] || undefined;
+							const selected = getArmaments().filter(a => a.name.toLocaleLowerCase() === inputValue.toLocaleLowerCase())[0] || undefined;
 							if(selected) {
 								addArmament(selected._id);
 								setInputValue("");

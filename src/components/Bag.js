@@ -127,7 +127,7 @@ const Bag = (props) => {
 							<PlusButton
 								className="col-1"
 								onClick={() => {
-									const selected = getBagItems().filter(a => a.name === bagInputValue)[0] || undefined;
+									const selected = getBagItems().filter(a => a.name.toLocaleLowerCase() === bagInputValue.toLocaleLowerCase())[0] || undefined;
 									if(selected) {
 										addBagItem(selected._id);
 										setBagInputValue("");
@@ -179,7 +179,7 @@ const Bag = (props) => {
 							<PlusButton
 								className="col-1"
 								onClick={() => {
-									const selected = getSpecialItems().filter(a => a.name === specialItemsInputValue)[0] || undefined;
+									const selected = getSpecialItems().filter(a => a.name.toLocaleLowerCase() === specialItemsInputValue.toLocaleLowerCase())[0] || undefined;
 									if(selected) {
 										addSpecialItem(selected._id);
 										setSpecialItemsInputValue("");

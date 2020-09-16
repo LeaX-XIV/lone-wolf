@@ -112,7 +112,34 @@ function App() {
 			</div>
 		);
 	} else {
-		return (<></>);
+		function loadLoneWolfFromFile(text) {
+
+			let newLW;
+			try {
+				newLW = Lonewolf.fromJSON(text);
+			} catch(e) {
+
+			}
+			if(newLW) {
+				console.log(newLW);
+				setL(newLW);
+			}
+
+		}
+
+		return (
+			<>
+				<input type="file" onChange={async e => {
+					e.preventDefault();
+					const reader = new FileReader();
+					reader.onload = async e => {
+						loadLoneWolfFromFile(e.target.result);
+						// console.log(text);
+					}
+					reader.readAsText(e.target.files[0]);
+				}} />
+			</>
+		);
 	}
 }
 

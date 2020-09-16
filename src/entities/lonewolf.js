@@ -30,8 +30,10 @@ class Lonewolf {
 						v;
 		});
 
-		if(typeof lw === "object" && lw.__proto__.constructor.name === Lonewolf.name)
+		if(typeof lw === "object" && lw.__proto__.constructor.name === Lonewolf.name) {
+			console.log(lw);
 			return lw;
+		}
 		else
 			throw new SyntaxError("Incorrect file format.");
 	}
